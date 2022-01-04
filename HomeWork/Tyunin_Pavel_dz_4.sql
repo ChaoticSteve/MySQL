@@ -9,7 +9,7 @@ create table users (
 	lastname varchar(50),
 	email varchar(120),
 	phone bigint unsigned unique,
-	passwarod_hash varchar(100),
+	password_hash varchar(100),
 	
 	PRIMARY KEY (id),
 	index users_firstname_lastname_idx(firstname, lastname)
@@ -101,7 +101,7 @@ create table media (
 	created_at datetime default now(),
 	updated_at datetime on update current_timestamp,
 	
-	foreign key (user_id) REFERENCES users(id), -- внезапно DBeaver начал самостоятельно на большие буквы исправлять
+	foreign key (user_id) REFERENCES users(id), -- ГўГ­ГҐГ§Г ГЇГ­Г® DBeaver Г­Г Г·Г Г« Г±Г Г¬Г®Г±ГІГ®ГїГІГҐГ«ГјГ­Г® Г­Г  ГЎГ®Г«ГјГёГЁГҐ ГЎГіГЄГўГ» ГЁГ±ГЇГ°Г ГўГ«ГїГІГј
 	FOREIGN KEY (media_type_id) REFERENCES media_types(is)
 );
 
