@@ -101,7 +101,7 @@ create table media (
 	created_at datetime default now(),
 	updated_at datetime on update current_timestamp,
 	
-	foreign key (user_id) REFERENCES users(id), -- âíåçàïíî DBeaver íà÷àë ñàìîñòîÿòåëüíî íà áîëüøèå áóêâû èñïðàâëÿòü
+	foreign key (user_id) REFERENCES users(id),
 	FOREIGN KEY (media_type_id) REFERENCES media_types(is)
 );
 
